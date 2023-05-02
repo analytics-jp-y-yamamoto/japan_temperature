@@ -3,6 +3,8 @@ import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import japanize_matplotlib
+import openpyxl
+
 from japanmap import picture
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -51,14 +53,14 @@ df_day = df_column1.day.unique()
 year_list_selector = st.sidebar.selectbox("年", df_year)
 month_list_selector = st.sidebar.selectbox("月", df_month)
 days_list_selector = st.sidebar.selectbox("日", df_day)
-selector = str(year_list_selector) + "/" + str(month_list_selector) + "/" + str(days_list_selector)
+st.session_state.selector = str(year_list_selector) + "/" + str(month_list_selector) + "/" + str(days_list_selector)
 
-df_day = st.session_state.df[selector]
+df_day = st.session_state.df[st.session_state.selector]
 
 cmap = plt.get_cmap('seismic')
 norm = plt.Normalize(vmin=st.session_state.df.min().min(), vmax=st.session_state.df.max().max())
 fcol = lambda x: '#' + bytes(cmap(norm(x), bytes=True)[:3]).hex()
 fig = plt.figure(figsize=(4,4))
 plt.colorbar(plt.cm.ScalarMappable(norm, cmap))
-plt.imshow(picture(st.session_state.df[selector].apply(fcol)))
+plt.imshow(picture(st.session_state.df[st.session_state.selector].apply(fcol)))
 st.pyplot(fig)
