@@ -6,3 +6,4 @@ japanize_matplotlib
 japanmap
 openpyxl
 opencv-python
+cv2
