@@ -4,3 +4,5 @@ pandas
 matplotlib
 japanize_matplotlib
 japanmap
+openpyxl
+opencv-python
