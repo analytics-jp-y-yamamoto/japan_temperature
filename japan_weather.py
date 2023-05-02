@@ -1,9 +1,6 @@
 import streamlit as st
 import datetime
 import pandas as pd
-import numpy as np
-import geopandas as gpd
-import random
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 from japanmap import picture
