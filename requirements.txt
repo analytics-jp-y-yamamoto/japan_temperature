@@ -3,4 +3,5 @@ datetime
 pandas
 matplotlib.pyplot
 japanize_matplotlib
+japanmap
 picture
