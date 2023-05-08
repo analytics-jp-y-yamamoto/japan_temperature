@@ -49,7 +49,10 @@ df_year = df_column1.year.unique()
 df_month = df_column1.month.unique()
 df_day = df_column1.day.unique()
 year_list_selector = st.sidebar.selectbox("年", df_year)
-month_list_selector = st.sidebar.selectbox("月", df_month)
+if year_list_selector == "2022":
+    month_list_selector = st.sidebar.selectbox("月", df_month)
+else:
+    month_list_selector = st.sidebar.selectbox("月", [1,2,3,4,5])
 days_list_selector = st.sidebar.selectbox("日", df_day)
 st.session_state.selector = str(year_list_selector) + "/" + str(month_list_selector) + "/" + str(days_list_selector)
 
