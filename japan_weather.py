@@ -52,7 +52,7 @@ year_list_selector = st.sidebar.selectbox("年", df_year)
 if year_list_selector == "2022":
     month_list_selector = st.sidebar.selectbox("月", df_month)
 else:
-    month_list_selector = st.sidebar.selectbox("月", [1,2,3,4,5])
+    month_list_selector = st.sidebar.selectbox("月", [1,2,3,4])
 days_list_selector = st.sidebar.selectbox("日", df_day)
 st.session_state.selector = str(year_list_selector) + "/" + str(month_list_selector) + "/" + str(days_list_selector)
 
